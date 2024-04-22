@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Árbol</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <script defer type="module" src="/js/index.js"></script>
+
+    <form id="tree-form">
+        <fieldset>
+            <legend>Generar árbol</legend>
+            <label>
+                <span>Símbolo inicial</span>
+                <input placeholder="S" name="start" type="text">
+            </label>
+            <label>
+                <span>Reglas</span>
+                <textarea name="rules"></textarea>
+            </label>
+            <label>
+                <span>Niveles máximos</span>
+                <input value="5" name="max" type="number">
+            </label>
+        </fieldset>
+        <div class="submit-wrapper">
+            <button type="submit">Generar</button>
+        </div>
+    </form>
+
+    <ul class="root" id="tree-root"></ul>
+</body>
+</html>

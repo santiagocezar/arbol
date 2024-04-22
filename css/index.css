@@ -1,0 +1,68 @@
+.node {
+    display: flex;
+    flex-direction: column;
+}
+.label {
+    display: flex;
+    height: 2rem;
+    padding: 0 .5rem;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+
+    background-color: hsl(195deg 53% 79%);
+    border: 1px solid hsl(195deg 53% 40%);
+    box-shadow: hsl(195deg 53% 60%) 0 -2px 8px inset;
+    border-bottom-width: 2px;
+    border-radius: 4px;
+}
+.empty > .label {
+    background-color: hsl(323deg 93% 83%);
+    border-color: hsl(323deg 93% 50%);
+    box-shadow: hsl(323deg 93% 60%) 0 -2px 8px inset;
+    border-radius: 999px;
+}
+
+.children {
+    display: flex;
+    flex-direction: row;
+}
+
+.root {
+    display: flex;
+    flex-direction: row;
+}
+
+.children .node {
+    padding: 0 .5rem;
+    padding-top: 1rem;
+    position: relative;
+}
+
+.children .node::before,
+.children .node::after {
+    content: "";
+    border: 0 solid pink;
+    position: absolute;
+    height: 2rem;
+    top: -1rem;
+    --w: 2px;
+}
+.children .node:not(:first-child)::after {
+    border-width: var(--w) var(--w) 0 0;
+    right: 50%;
+    left: 0;
+    border-top-right-radius: 4px;
+}
+.children .node:not(:last-child)::before {
+    border-width: var(--w) 0 0 var(--w);
+    left: calc(50% - var(--w));
+    right: 0;
+    border-top-left-radius: 4px;
+}
+.children .node:last-child:first-child::before {
+    border-width: 0 0 0 var(--w);
+    left: calc(50% - var(--w));
+    right: 0;
+}

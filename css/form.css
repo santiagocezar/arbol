@@ -1,0 +1,83 @@
+h1 {
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+    align-items: start;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 20rem;
+    max-width: 20rem;
+    padding-top: .5rem;
+}
+
+label {
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    box-shadow: #f0f0f0 0 2px 8px inset;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+label::after {
+    content: attr(data-suffix);
+    padding: 0 .25rem;
+    opacity: .75;
+}
+
+label:has(input:focus),
+label:has(textarea:focus){
+    border-color: royalblue;
+}
+label span {
+    flex-basis: 100%;
+    font-size: .75rem;
+    padding: 0 .5rem;
+    opacity: .75;
+}
+
+label input,
+label textarea {
+    outline: none !important;
+    background-color: transparent;
+    padding: 0 .5rem;
+    flex-grow: 1;
+}
+label textarea {
+    height: 6rem;
+    resize: none;
+    background: none;
+}
+
+.submit-wrapper {
+    flex-basis: 100%;
+}
+
+button[type="submit"] {
+    background-color: aquamarine;
+
+    border: 1px solid hsl(160deg 100% 40%);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    box-shadow: hsl(160deg 100% 50%) 0 -2px 8px inset;
+
+    padding: .5rem 2rem;
+
+    outline: none !important;
+}
+button[type="submit"]:focus {
+    border-color: royalblue;
+    box-shadow: hsl(160deg 100% 80%) 0 -2px 8px inset;
+}
